@@ -7,23 +7,22 @@ from k_means_thresholding import k_means_thresholding
 
 
 def filtered_k_means_thresholding(im1):
-    kernel = np.ones((3,3),np.uint8)
-    open = cv2.morphologyEx(im1,cv2.MORPH_OPEN,kernel)
-
-    #Display for test puroses
-    cv2.imshow('Original',im1)
-    cv2.imshow('Open',open)
-
-    mask_orig = k_means_thresholding(im1)
-    mask_open = k_means_thresholding(open)
-
-    cv2.imshow('Original mask',mask_orig)
-    cv2.imshow('Ope asjn',mask_open)
-
-    cv2.imshow('morph after',cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel))
-
+    mask = k_means_thresholding(im1)
+    kernel = np.ones((5,5),np.uint8)
+    kernel2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(8,8))
+    # mask_open = cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel)
+    mask_open2 = cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel2)
+    kernel2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(2,2))
+    mask_open2_close = cv2.morphologyEx(mask_open2,cv2.MORPH_CLOSE,kernel2)
+    
+    # Display for test purposes
+    # cv2.imshow('Original',im1)
+    # cv2.imshow('Mask',mask)
+    # cv2.imshow('Mask Open',mask_open)
+    cv2.imshow('Mask Open2',mask_open2)
+    cv2.imshow('Mask Open2 Close',mask_open2_close)
     cv2.waitKey(0)
-
+    return mask_open2_close
 
 
 
@@ -33,4 +32,4 @@ if __name__ == '__main__':
     im1 = cv2.imread(sys.argv[1],0)
     outputfile = sys.argv[2]
     mask = filtered_k_means_thresholding(im1)
-    cv2.imwrite(outputfile,mask)
+    # cv2.imwrite(outputfile,mask)
