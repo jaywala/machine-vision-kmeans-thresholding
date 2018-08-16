@@ -1,3 +1,4 @@
+# Note: I used Python 3.6.5 and OpenCV 3.4.2. The result varied on the VLab Computer with Python 2.7 producing incorrect output
 import sys
 import cv2
 import numpy as np

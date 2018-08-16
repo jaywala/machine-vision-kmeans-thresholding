@@ -1,3 +1,8 @@
 k_means_thresholding function is applied first
 Open is applied next to remove noise
-Close is applied next to remove gaps
+Close is applied next to remove gaps in eggs
+
+
+Note: I used Python 3.6.5 and OpenCV 3.4.2. The code ran on the VLab Computer with Python 2.7 
+but produceed incorrect output for task 1 and hence task 2 as well. The output was correct on my 
+Personal Computer with the specified versions of the programs mentioned

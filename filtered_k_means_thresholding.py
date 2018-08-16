@@ -1,3 +1,4 @@
+# Note: I used Python 3.6.5 and OpenCV 3.4.2. The result varied on the VLab Computer with Python 2.7 producing incorrect output
 import sys
 import cv2
 import numpy as np
@@ -17,9 +18,9 @@ def filtered_k_means_thresholding(im1):
     # cv2.imshow('Original',im1)
     # cv2.imshow('Mask',mask)
     # cv2.imshow('Mask Open',mask_open)
-    cv2.imshow('Mask Open2',mask_open2)
-    cv2.imshow('Mask Open2 Close',mask_open2_close)
-    cv2.waitKey(0)
+    # cv2.imshow('Mask Open2',mask_open2)
+    # cv2.imshow('Mask Open2 Close',mask_open2_close)
+    # cv2.waitKey(0)
     return mask_open2_close
 
 
