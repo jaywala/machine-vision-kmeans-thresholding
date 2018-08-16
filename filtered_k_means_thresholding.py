@@ -7,9 +7,9 @@ from k_means_thresholding import k_means_thresholding
 
 def filtered_k_means_thresholding(im1):
     mask = k_means_thresholding(im1)
-    kernel = np.ones((5,5),np.uint8)
-    kernel2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(10,10))
+    # kernel = np.ones((5,5),np.uint8)
     # mask_open = cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel)
+    kernel2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(10,10))
     mask_open2 = cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel2)
     kernel2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(2,2))
     mask_open2_close = cv2.morphologyEx(mask_open2,cv2.MORPH_CLOSE,kernel2)

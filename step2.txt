@@ -1,0 +1,3 @@
+k_means_thresholding function is applied first
+Open is applied next to remove noise
+Close is applied next to remove gaps

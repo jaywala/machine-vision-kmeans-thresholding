@@ -1,7 +1,6 @@
 import sys
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 from k_means_thresholding import k_means_thresholding
 from filtered_k_means_thresholding import filtered_k_means_thresholding
 
@@ -35,8 +34,6 @@ def count_eggs_4(im1,min_comp_size):
                         label_count += 1
                         # print(label_count)
                     label_mask[y,x] = label_low
-    plt.matshow(label_mask)
-    plt.show()
 
     # Second Pass for finding connected components
     for x in range(label_mask.shape[1]):
@@ -48,9 +45,6 @@ def count_eggs_4(im1,min_comp_size):
                         if 0<label_mask[y+neighbour[i][0],x+neighbour[i][1]]<label_low:
                             label_low = label_mask[y+neighbour[i][0],x+neighbour[i][1]]
                 label_mask[y,x] = label_low
-
-    plt.matshow(label_mask)
-    plt.show()
     
     # Count Pixel size of each component
     size_count = np.zeros(label_count)
