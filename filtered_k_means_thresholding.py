@@ -1,7 +1,6 @@
 import sys
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 from k_means_thresholding import k_means_thresholding
 
 

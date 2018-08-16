@@ -1,8 +1,6 @@
 import sys
 import cv2
 import numpy as np
-from k_means_thresholding import k_means_thresholding
-from filtered_k_means_thresholding import filtered_k_means_thresholding
 
 
 def count_eggs_4(im1,min_comp_size):
